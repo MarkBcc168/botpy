@@ -78,4 +78,4 @@ def card_to_string(c):
   numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A']
   return numbers[c%13] + suits[math.floor(c/13)]
 #-----------------------------------------#
-client.run('ODMzNjE4NDk3NTY4MjQzNzEy.YH09uQ.v1Ytn0VtYc_dBhBOulaEO6HAhuQ')
+client.run(os.getenv('TOKEN'))
