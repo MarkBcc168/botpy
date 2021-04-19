@@ -15,7 +15,10 @@ async def on_ready():
 async def on_message(m):
   if m.author == client.user:
     return
-  if m.content.startswith("c!shuffle"):
+  if m.content.startswith("c.help"):
+    help_message = "Type **c.shuffle** to reset and shuffle the new deck. \n Type **c.draw [number]** to draw a specific number of cards."
+    await m.channel.send(help_message)
+  if m.content.startswith("c.shuffle"):
     if m.guild is None:
       await m.author.send("You cannot use this in DM.")
       return
@@ -23,7 +26,7 @@ async def on_message(m):
     await m.channel.send("Cards are shuffled. 52 left")
 
 
-  if m.content.startswith("c!draw"):
+  if m.content.startswith("c.draw"):
     if m.guild is None:
       await m.author.send("You cannot use this in DM.")
       return
